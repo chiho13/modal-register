@@ -250,7 +250,7 @@
 }
 select.bs-select-hidden,
 select.selectpicker {
-  display: none !important;
+   display: none;
 }
 select.mobile-device {
   position: absolute !important;

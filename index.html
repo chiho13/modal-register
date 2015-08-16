@@ -13,7 +13,10 @@
         <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 		<link rel="stylesheet" href="assets/css/form-elements.css">
         <link rel="stylesheet" href="assets/css/style.css">
+         <link rel="stylesheet" href="assets/css/buttons.css">
+         <link rel="stylesheet" type="text/css" href="assets/css/vicons-font.css" />
          <link rel="stylesheet" href="assets/css/bootstrap-select.css">
+         <link rel="stylesheet" href="assets/css/checkbox.css">
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -29,6 +32,8 @@
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
         <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
 
+        <script src="assets/js/modernizr.custom.js"></script>
+
     </head>
 
     <body>
@@ -40,7 +45,9 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 text">
-                        	<a class="logo" href="index.html"></a>
+                        	<a class="logo" href="index.html">
+                                <img src="assets/img/minionslogo.png" height="200">   
+                            </a>
                             <h2>Start your registration here</h2>
                            <!--  <div class="description">
                             	<p>
@@ -49,8 +56,10 @@
                             	</p>
                             </div> -->
                             <div class="top-big-link">
-                            	<a class="btn btn-link-1 launch-modal" href="#" data-modal-id="modal-register">Start</a>
+                            	 <button class="button button--winona button--border-medium button--round-s launch-modal" data-text="START" data-modal-id="modal-register"><span>START</span></button>
                             </div>
+
+                           
                         </div>
                     </div>
                 </div>
@@ -67,25 +76,24 @@
         				<button type="button" class="close" data-dismiss="modal">
         					<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
         				</button>
-        				<h3 class="modal-title" id="modal-register-label">Register now</h3>
+        				<h3 class="modal-title" id="modal-register-label">REGISTER NOW</h3>
         				<p>Fill in the form below to get instant access (All fields are required):</p>
         			</div>
         			
         			<div class="modal-body">
         				
-	                    <form role="form" action="" method="post" class="registration-form">
+	                    <form class="ac-custom ac-checkbox ac-checkmark" autocomplete="off" data-parsley-validate role="form" action="" method="post" class="registration-form">
 	                    	<div class="form-group">
 	                    		<label class="sr-only" for="form-first-name">Brand name</label>
-	                        	<input type="text" name="form-first-name" placeholder="Brand name" class="form-first-name form-control" id="form-first-name" required>
-	                        </div>
-	                        <div class="form-group">
-	                        	<label class="sr-only" for="form-last-name">Last name</label>
-	                        	<input type="text" name="form-last-name" placeholder="Country" class="form-last-name form-control" id="form-last-name">
-
+	                        	<input type="text" name="form-first-name" placeholder="Brand name" class="form-first-name form-control" id="form-first-name" required >
 	                        </div>
 
-                            <fieldset>
-                             <select class="selectpicker">
+                            <div class="form-group">
+                                <label class="sr-only" for="form-first-name">Website</label>
+                                <input type="url" name="form-first-name" placeholder="Website" class="form-website form-control" id="form-website" required >
+                            </div>
+
+                             <select class="selectpicker" required>
                                   <option value="" disabled selected="">Select Continent</option>
                                 <option> North America</option>
                                  <option> Central America</option>
@@ -112,13 +120,42 @@
                                 <option value="mercedes">Italy</option>
                                 <option value="audi">South Africa</option>
                             </select> 
-                            </fieldset>
+                        
+                            <div class="form-group">
+                                <label class="sr-only" for="form-first-name">Brand Manager full name</label>
+                                <input type="text" name="form-first-name" placeholder="Brand Manager full name" class="form-first-name form-control" id="form-first-name" required>
+                            </div>
+
+                             <div class="form-group">
+                                <label class="sr-only" for="form-first-name">Phone no.</label>
+                                <input type="tel" name="form-tel" placeholder="Phone no." class="form-first-name form-control" id="form-tel" required>
+                            </div>
+
 	                        <div class="form-group">
-	                        	<label class="sr-only" for="form-email">Email</label>
-	                        	<input type="text" name="form-email" placeholder="Email..." class="form-email form-control" id="form-email">
+	                        	<label class="sr-only" for="form-email">Email Address</label>
+	                        	<input type="text" name="form-email" placeholder="Email Address" class="form-email form-control" id="form-email" required>
 	                        </div>
+
+                             <div class="form-group">
+                                <label class="sr-only" for="form-password">Password</label>
+                                 <input type="password" class="input-lg form-control" name="password1" id="password1" placeholder="New Password" autocomplete="off">
+                            </div>
+
+                           
+
+                            <input type="password" class="input-lg form-control" name="password2" id="password2" placeholder="Confirm Password" autocomplete="off" required>
+                            <span id="pwmatch" class="glyphicon glyphicon-remove" style="color:#FF0004;"></span> Passwords Match
+
+
+                             <ul>
+                             <li id="checkbox-list">
+                                 <input id="cb6" name="cb6" type="checkbox" required><label id="checkbox-label" for="cb6" >I agree to the terms and conditions</label>
+                            </li>
+                            </ul>
+                            
+
 	                       
-	                        <button type="submit" class="btn">Register</button>
+	                       <button type="submit" class="button button--wapasha button--round-s">Register</button>
 	                    </form>
 	                    
         			</div>
@@ -126,10 +163,20 @@
         		</div>
         	</div>
         </div>
+
+
+        <footer class="footer">
+        <p> 2015 &copy Styleminions. All Rights Reserved.
+        </footer>
          <script>
          $('.selectpicker').selectpicker();
+         $("select.selectpicker").focus(function(){
+  $(this).next(".bootstrap-select").find('.selectpicker').focus();
+});
+        
+    })
         </script>
-
+        <script src="assets/js/modernizr.custom.js"></script>
         <!-- Javascript -->
         <script src="assets/js/jquery-1.11.1.min.js"></script>
 
@@ -137,7 +184,9 @@
         <script src="assets/js/jquery.backstretch.min.js"></script>
         <script src="assets/js/scripts.js"></script>
         <script src="assets/js/bootstrap-select.js"></script>
-      
+        
+        <script src="assets/js/svgcheckbx.js"></script>
+        
 
        
         <!--[if lt IE 10]>
@@ -145,6 +194,61 @@
         <![endif]-->
 
         <script>
+            $("input[type=password]").keyup(function(){
+    // var ucase = new RegExp("[A-Z]+");
+    // var lcase = new RegExp("[a-z]+");
+    // var num = new RegExp("[0-9]+");
+    
+    // if($("#password1").val().length >= 8){
+    //     $("#8char").removeClass("glyphicon-remove");
+    //     $("#8char").addClass("glyphicon-ok");
+    //     $("#8char").css("color","#00A41E");
+    // }else{
+    //     $("#8char").removeClass("glyphicon-ok");
+    //     $("#8char").addClass("glyphicon-remove");
+    //     $("#8char").css("color","#FF0004");
+    // }
+    
+    // if(ucase.test($("#password1").val())){
+    //     $("#ucase").removeClass("glyphicon-remove");
+    //     $("#ucase").addClass("glyphicon-ok");
+    //     $("#ucase").css("color","#00A41E");
+    // }else{
+    //     $("#ucase").removeClass("glyphicon-ok");
+    //     $("#ucase").addClass("glyphicon-remove");
+    //     $("#ucase").css("color","#FF0004");
+    // }
+    
+    // if(lcase.test($("#password1").val())){
+    //     $("#lcase").removeClass("glyphicon-remove");
+    //     $("#lcase").addClass("glyphicon-ok");
+    //     $("#lcase").css("color","#00A41E");
+    // }else{
+    //     $("#lcase").removeClass("glyphicon-ok");
+    //     $("#lcase").addClass("glyphicon-remove");
+    //     $("#lcase").css("color","#FF0004");
+    // }
+    
+    // if(num.test($("#password1").val())){
+    //     $("#num").removeClass("glyphicon-remove");
+    //     $("#num").addClass("glyphicon-ok");
+    //     $("#num").css("color","#00A41E");
+    // }else{
+    //     $("#num").removeClass("glyphicon-ok");
+    //     $("#num").addClass("glyphicon-remove");
+    //     $("#num").css("color","#FF0004");
+    // }
+    
+    if($("#password1").val() == $("#password2").val()){
+        $("#pwmatch").removeClass("glyphicon-remove");
+        $("#pwmatch").addClass("glyphicon-ok");
+        $("#pwmatch").css("color","#00A41E");
+    }else{
+        $("#pwmatch").removeClass("glyphicon-ok");
+        $("#pwmatch").addClass("glyphicon-remove");
+        $("#pwmatch").css("color","#FF0004");
+    }
+});
 
 
 

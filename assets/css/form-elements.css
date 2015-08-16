@@ -1,10 +1,14 @@
 
 input[type="text"], 
+input[type="tel"], 
+input[type="email"], 
+input[type="password"], 
+input[type="url"], 
 textarea, 
 textarea.form-control {
 	height: 50px;
     margin: 0;
-    padding: 0 20px;
+   /* padding: 0 20px;*/
     vertical-align: middle;
     background: #f8f8f8;
     border: 1px solid #ddd;
@@ -25,6 +29,10 @@ textarea.form-control {
 	line-height: 30px;
 }
 
+input[type="tel"]:focus, 
+input[type="email"]:focus, 
+input[type="password"]:focus, 
+input[type="url"]:focus,
 input[type="text"]:focus, 
 textarea:focus, 
 textarea.form-control:focus {
@@ -34,10 +42,25 @@ textarea.form-control:focus {
     -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none;
 }
 
-input[type="text"]:-moz-placeholder, textarea:-moz-placeholder, textarea.form-control:-moz-placeholder { color: #888; }
+/*input[type="text"]:-moz-placeholder, textarea:-moz-placeholder, textarea.form-control:-moz-placeholder { color: #888; }
 input[type="text"]:-ms-input-placeholder, textarea:-ms-input-placeholder, textarea.form-control:-ms-input-placeholder { color: #888; }
-input[type="text"]::-webkit-input-placeholder, textarea::-webkit-input-placeholder, textarea.form-control::-webkit-input-placeholder { color: #888; }
+input[type="text"]::-webkit-input-placeholder, textarea::-webkit-input-placeholder, textarea.form-control::-webkit-input-placeholder { color: #888; }*/
 
+::-webkit-input-placeholder {
+   color: #555;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  color: #555;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #555;
+}
+
+:-ms-input-placeholder {  
+ color: #555;  
+}
 
 
 button.btn {
@@ -66,3 +89,17 @@ button.btn:active { outline: 0; opacity: 0.6; color: #fff; -moz-box-shadow: none
 button.btn:focus { outline: 0; opacity: 0.6; color: #fff; }
 
 button.btn:active:focus, button.btn.active:focus { outline: 0; opacity: 0.6; color: #fff; }
+
+select.selectpicker {
+  display: block !important;
+  float: left;
+  overflow: hidden; 
+  
+  height: 34px;
+  width: 0;
+  border: 0; 
+  padding: 0; 
+  
+  box-shadow: none; 
+  color: white; 
+}
